@@ -1,24 +1,34 @@
 // import { Fragment } from "react"
 
-const profile = {
-  name: "Edwin",
-  title: "Junior front End, Backend & UI/UX designer"
-};
+// const  profile = {
+//   name: "Edwin",
+//   title: "Junior FrontEnd, BackEnd & UI/UX Designer"
+// };
 
+import PropTypes from 'prop-types';
+import{CounterApp} from "./CounterApp";
 
-export const FirstApp = () => {
+export const FirstApp = ({title,name}) => {
   return (
     <>
       <h2 style={{ fontSize: "50px", marginBottom: "0px" }}>
-        Hola, soy <span>{profile.name}</span>
+        Hola, soy <span>{name}</span>
       </h2>
-      <p>{profile.title}</p>
-      <p>Esto es un texto simple</p>
+      <p>{title}</p>
+
+      <CounterApp />
     </>
   );
 };
 
-
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+FirstApp.defaultProps = {
+  title: 'No hay titulo',
+  name: 'una Persona',
+};
 
 
 
